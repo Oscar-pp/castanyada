@@ -77,7 +77,7 @@ const menu = crearMenu(productes);
 // Ruta català
 app.get("/", (req, res) => {
   // Realizar el menú
-  const menu = crearMenu(productes, "cat")
+  const menu = crearMenu(productes, "cat");
   res.render("index", { title: "Umm...!",menu, productes, lang: "ESP" });
 });
 // Ruta raíz o inicial
@@ -91,28 +91,26 @@ app.get("/admin", (req, res) => {
 });
 
 
-
-
-
 app.post("/insert", (req, res) => {
   const body = req.body;
   body.id = crypto.randomUUID();
 
-
-
-
-  
-  //console.log(body);
-  productes.push(body);
-  fs.writeFileSync(
-    path.join(__dirname, "../data", "pastisseria.json"),
-    JSON.stringify(productes, null, 2),
-    (err) => {
-      if (err) throw err;
-    }
-  );
-  // res.render("admin", { title: "administración", menu, travels });
-  res.redirect("/admin")
+  const query = 'INSERT INTO sweets (id, menu_name_cat, name_cat, descripcio_cat, menu_name_esp, name_esp, descripcio_esp, preu, img) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);';
+  // ordeno los valores para que coincidan con el insert. Per si de cas!.
+  const values = [
+                  body.id,
+                  body.menu_name_cat,
+                  body.name_cat,
+                  body.descripcio_cat,
+                  body.menu_name_esp,
+                  body.name_esp,
+                  body.descripcio_esp,
+                  body.preu,
+                  body.img
+                ];
+  connection.query(query, values, (error, results) => {if (error) throw error;});
+  obtenerDatosBBDD();
+  res.redirect("/admin");  
 });
 
 // Ruta para manejar errores 404
