@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `ummoscarplazaportales` /*!40100 DEFAULT CHARACTE
 USE `ummoscarplazaportales`;
 -- MySQL dump 10.13  Distrib 8.0.43, for Win64 (x86_64)
 --
--- Host: localhost    Database: ummoscarplazaportales
+-- Host: 127.0.0.1    Database: ummoscarplazaportales
 -- ------------------------------------------------------
 -- Server version	8.4.6
 
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-10-30 11:41:03
+-- Dump completed on 2025-10-30 13:09:10
