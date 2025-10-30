@@ -82,6 +82,7 @@ app.get("/", (req, res) => {
 });
 // Ruta raíz o inicial
 app.get("/esp", (req, res) => {
+  obtenerDatosBBDD();
   const menu = crearMenu(productes, "esp")
   res.render("inicio", { title: "Umm...!", menu, productes });
 });
