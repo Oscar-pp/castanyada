@@ -43,7 +43,7 @@ de tal modo que sea totalmente utilizable en otro
 equipo. Asegúrate de ello. La añades a la carpeta "data".
 Después haz un push a Github.
 
-08)
+08)X
 En el proyecto, haz lo necesario para poder utilizar el módulo "mysql2".
 Configura la conexión.
 

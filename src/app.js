@@ -21,6 +21,7 @@ const configConnection = {
 
 // Crear la conexión a mysql
 const connection = mysql.createConnection(configConnection);
+
 PORT = process.env.PORT || 6666;
 app.set("views", "./views");
 app.set("view engine", "ejs");
@@ -30,30 +31,32 @@ app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Obtener los datos
 
+let productes = [];
+
+// Obtener todos los datos de la BBDD
 function obtenerDatosBBDD(){
-  const queryDatos = `SELECT * FROM sweets`;
-  connection.query(query,(error, results, fields) => {
+  const queryDatos = "SELECT * FROM sweets";
+  connection.query(queryDatos, (error, results, fields) => {
     if (error) throw error;
-    return results;
-  })
-
+    productes = results;
+  });
 }
-let productes = obtenerDatosBBDD();
 
-function crearMenu(json, lang) {
+obtenerDatosBBDD();
+
+function crearMenu(productes, lang) {
   let tipusProductes = [];
   let menu = "<ul>";
 
   if (lang === "cat") {
-  json.forEach((producte) => {
+  productes.forEach((producte) => {
     if (!tipusProductes.includes(producte.menu_name_cat)) {
       tipusProductes.push(producte.menu_name_cat);
     }
   });
 } else {
-  json.forEach((producte) => {
+  productes.forEach((producte) => {
     if (!tipusProductes.includes(producte.menu_name_esp)) {
       tipusProductes.push(producte.menu_name_esp);
     }
@@ -68,8 +71,7 @@ function crearMenu(json, lang) {
 }
 
 // Realizar el menú
-const menu = crearMenu(productes)
-
+const menu = crearMenu(productes);
 
 
 // Ruta català
