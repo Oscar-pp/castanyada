@@ -30,14 +30,13 @@
     "name_esp": "Surtido de panellets",
     "descripcio_esp": "Surtido de panellets: piñones, almendra y coco.",
     "preu": "7.25 €/Kg",
-
     "img": "Panellets-assortiment.webp"
   },
   {
     "id": 4,
     "menu_name_cat": "Castanyada",
     "name_cat": "Castanyes al forn",
-"descripcio_cat": "Castanyes al forn acabades de coure.",
+    "descripcio_cat": "Castanyes al forn acabades de coure.",
     "menu_name_esp": "Castañada",
     "name_esp": "Castañas al horno",
     "descripcio_esp": "Castañas al horno recién hechas.",
@@ -48,34 +47,33 @@
     "id": 5,
     "menu_name_cat": "Pastissos",
     "name_cat": "Pastís de xocolata",
-"descripcio_cat": "Pastís esponjós amb cobertura de xocolata negra.",
-"menu_name_esp": "Pasteles",
+    "descripcio_cat": "Pastís esponjós amb cobertura de xocolata negra.",
+    "menu_name_esp": "Pasteles",
     "name_esp": "Pastel de chocolate",
     "descripcio_esp": "Pastel esponjoso con cobertura de chocolate negro",
     "preu": "15.00 €/u",
-    
     "img": "pastis-de-xocolata_2.jpg"
   },
   {
     "id": 6,
     "menu_name_cat": "Pastissos",
     "name_cat": "Pastís de maduixa",
- "descripcio_cat": "Pastís fresc amb crema i maduixes naturals.",
+    "descripcio_cat": "Pastís fresc amb crema i maduixes naturals.",
     "menu_name_esp": "Pasteles",
     "name_esp": "Pastel de fresa",
     "descripcio_esp": "Pastel fresco con crema y fresas naturales.",
-    "preu": "14.50 €/u",   
+    "preu": "14.50 €/u",
     "img": "pastis-de-maduixa.webp"
   },
   {
     "id": 7,
     "menu_name_cat": "Brioixeria",
     "name_cat": "Croissant de mantega",
-"descripcio_cat": "Croissant artesanal fet amb mantega de primera qualitat.",
+    "descripcio_cat": "Croissant artesanal fet amb mantega de primera qualitat.",
     "menu_name_esp": "Bollería",
     "name_esp": "Croissant de mantequilla",
     "descripcio_esp": "Croissant artesanal hecho con mantequilla de primera calidad.",
-    "preu": "2.50 €/u",    
+    "preu": "2.50 €/u",
     "img": "croissants.webp"
   },
   {
@@ -99,6 +97,27 @@
     "preu": "3.00 €/u",
     "descripcio_cat": "Ensaimada tradicional mallorquina, lleugera i esponjosa.",
     "img": "ensaimada.webp"
+  },
+  {
+    "menu_name_cat": "",
+    "menu_name_esp": "",
+    "name_cat": "",
+    "name_esp": "",
+    "descripcio_cat": "",
+    "descripcio_esp": "",
+    "preu": "",
+    "img": "",
+    "id": "26f60983-b81e-47b9-92ef-2adaf7b8b00b"
+  },
+  {
+    "menu_name_cat": "",
+    "menu_name_esp": "",
+    "name_cat": "",
+    "name_esp": "",
+    "descripcio_cat": "",
+    "descripcio_esp": "",
+    "preu": "",
+    "img": "",
+    "id": "f5f6911f-7ad8-4b8a-b8a5-950c84341f6f"
   }
-
 ]

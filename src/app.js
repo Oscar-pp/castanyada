@@ -4,13 +4,23 @@ const path = require("node:path");
 const fs = require("node:fs");
 const crypto = require("node:crypto");
 const methodOverride = require("method-override"); // para "put"
-
+const mysql = require("mysql2");
 
 // Crear la instancia del servidor
 const app = express();
 
 // Configurar algunos parámetros
 process.loadEnvFile();
+const configConnection = {
+  host: process.env.HOST,
+  port: process.env.PORTMYSQL,
+  user: process.env.USER,
+  password: process.env.PASSWORD,
+  database: process.env.DATABASE
+};
+
+// Crear la conexión a mysql
+const connection = mysql.createConnection(configConnection);
 PORT = process.env.PORT || 6666;
 app.set("views", "./views");
 app.set("view engine", "ejs");
@@ -21,7 +31,16 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Obtener los datos
-let productes = require("../data/pastisseria.json");
+
+function obtenerDatosBBDD(){
+  const queryDatos = `SELECT * FROM sweets`;
+  connection.query(query,(error, results, fields) => {
+    if (error) throw error;
+    return results;
+  })
+
+}
+let productes = obtenerDatosBBDD();
 
 function crearMenu(json, lang) {
   let tipusProductes = [];
