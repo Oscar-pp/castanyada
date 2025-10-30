@@ -97,6 +97,11 @@ app.get("/admin", (req, res) => {
 app.post("/insert", (req, res) => {
   const body = req.body;
   body.id = crypto.randomUUID();
+
+
+
+
+  
   //console.log(body);
   productes.push(body);
   fs.writeFileSync(
